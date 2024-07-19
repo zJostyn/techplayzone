@@ -1,0 +1,22 @@
+<div class="contenido">
+    <div class="form-all">
+      <h2 class="poppins-bold-italic">TECHPLAYZONE</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="ingresar(loginForm.value)">
+        <div>
+          <label class="poppins-regular" for="username">Usuario:</label>
+          <input class="poppins-regular" id="username" type="text" formControlName="user">
+        </div>
+        <div>
+          <label class="poppins-regular" for="password">Contraseña:</label>
+          <div class="password-container">
+            <input class="poppins-regular" id="password" [type]="mostrarContrasena ? 'text' : 'password'"formControlName="pass">
+            <span class="toggle-password" (click)="mostrarContrasena = !mostrarContrasena">
+              <i [class]="mostrarContrasena ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye'"></i>
+            </span>
+          </div>
+        </div>
+        <button class="poppins-medium" type="submit">Entrar</button>
+      </form>
+    </div>
+  </div>
+  

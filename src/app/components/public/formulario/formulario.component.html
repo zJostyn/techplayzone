@@ -1,0 +1,148 @@
+<app-navbar></app-navbar>
+<div class="contenido">
+
+    <form action="">
+
+        <div class="row">
+    
+            <div class="col">
+    
+                <h3 class="title">Datos de Facturación</h3>
+    
+                <div class="inputBox">
+                    <span>Nombre:</span>
+                    <input type="text" placeholder="Nombre" [(ngModel)] = "nuevoCliente.cli_nombre" id="cliNombre" name="cliNombre" required>
+                </div>
+                <div class="inputBox">
+                    <span>Apellido:</span>
+                    <input type="text" placeholder="Apellido" [(ngModel)] = "nuevoCliente.cli_apellido" id="cliApellido" name="cliApellido" required>
+                </div>
+                <div class="inputBox">
+                    <span>Género:</span>
+                    <div class = "lista-generos">
+                        <input type="text" style = "margin: 0;" value="{{mostrarGenero}}" readonly placeholder="Género">
+                    <select id = "cliGenero" (change)="onGenreSelected($event)">
+                        <option [value]="-1" disabled selected>Seleccione una opción</option>
+                        <option *ngFor="let genero of generos" [value]="genero.id_genero">{{ genero.nombre }}</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="inputBox">
+                    <span>Email:</span>
+                    <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="example@example.com" [(ngModel)] = "nuevoCliente.cli_correoelectronico" id="cliCorreo" name="cliCorreo">
+                </div>
+                <div class="inputBox">
+                    <span>Teléfono:</span>
+                    <input type="tel" placeholder="Teléfono" [(ngModel)] = "nuevoCliente.cli_telefono" id="cliTelefono" name="cliTelefono" maxlength="10">
+                </div>
+                <div class="inputBox">
+                    <span>Ciudad:</span>
+                    <div class = "lista-ciudades">
+                        <input type="text" style = "margin: 0;" value="{{mostrarCiudad}}" readonly placeholder = "Ciudad">
+                        <select id = "cliCiudad" (change)="onCitySelected($event)">
+                          <option [value]="-1" disabled selected>Seleccione una opción</option>
+                          <option *ngFor="let ciudad of ciudades" [value]="ciudad.id">{{ ciudad.nombre }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="inputBox">
+                    <span>Dirección:</span>
+                    <input type="text" placeholder="Departamento - Calle - Localidad" [(ngModel)] = "nuevoCliente.cli_direccion" id="cliDireccion" name="cliDireccion">
+                </div>
+    
+            </div>
+    
+            <div class="col">
+    
+                <h3 class="title">Pago</h3>
+                <div class="inputBox">
+                    <span>Tarjetas aceptadas:</span>
+                    <img src="../../../../assets/card_img.png" alt="" >
+                </div>
+                <div class="inputBox">
+                    <span>Nombre del titular:</span>
+                    <input type="text" name = "nombreTarjeta" id = "nombreTarjeta" placeholder="Nombre del titular" [(ngModel)] = "datosTarjeta.nombre_titular">
+                </div>
+                <div class="inputBox">
+                    <span>Número de tarjeta:</span>
+                    <input type="text" 
+                    name="numeroTarjeta" 
+                    id="numeroTarjeta" 
+                    placeholder="1111-2222-3333-4444" 
+                    [(ngModel)]="datosTarjeta.numero_tarjeta" 
+                    (input)="formatNumeroTarjeta($event)"
+                    pattern="[0-9]{4}[\s-]?[0-9]{4}[\s-]?[0-9]{4}[\s-]?[0-9]{4}" 
+                    maxlength="19">             
+                             </div>
+                <div class="inputBox">
+                    <span>Mes de expiración:</span>
+                    <input type="text" name = "mesExpiracion" id = "mesExpiracion" placeholder="Febrero" [(ngModel)] = "datosTarjeta.mes_expiracion">
+                </div>
+    
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>Año de expiración:</span>
+                        <input type="number" name = "anioExpiracion" id = "anioExpiracion" placeholder="2022" [(ngModel)] = "datosTarjeta.anio_expiracion">
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV:</span>
+                        <input type="number" name = "cvv" id = "cvv" placeholder="1234" [(ngModel)] = "datosTarjeta.cvv">
+                    </div>
+                </div>
+                <p class="total-pagar">Total a pagar: <span class="subtotal"><strong>${{subtotal.toFixed(2)}}</strong></span></p>
+    
+            </div>
+    
+        </div>
+    
+        <button class="submit-btn" (click) = "procesarPago()">Procesar pago</button>
+    </form>
+    
+
+    <div class = "productos">
+        <h3>PRODUCTOS</h3>
+        <div class="carrito-contenido">
+          <div class = "carrito-producto" *ngFor="let producto of productosAgregados">
+            <img src="{{producto.imagen}}" alt="">
+            <div class = "info">
+                <h6>{{producto.nombre}}</h6>
+                <p><strong>Cantidad: </strong>{{producto.cantidad}}</p>
+                <p><strong>Precio: </strong>${{producto.precio}}</p>
+                <p><strong>Total: </strong>${{(producto.precio * producto.cantidad).toFixed(2)}}</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="factura" style="width: 100%;max-width: 600px;margin: auto;padding: 20px;border: 1px solid #ccc;border-radius: 5px;font-family: Arial, sans-serif;">
+    <h1 style="font-weight: bold;color: #FFA500 !important; font-style: italic;text-align: center;">TECHPLAYZONE</h1>
+    <h3 style="font-weight: bold;text-align: center;margin-bottom: 10px;">Factura del Pedido</h3>
+    <p style="margin: 5px 0;"><strong>Fecha del Pedido: </strong>{{fechaPedido}}</p>
+    <h3 style="text-align: center;">Datos de Facturación</h3>
+    <p style="margin: 5px 0;"><strong>Nombre:</strong> {{nuevoCliente.cli_nombre}}</p>
+    <p style="margin: 5px 0;"><strong>Apellido:</strong> {{nuevoCliente.cli_apellido}}</p>
+    <p style="margin: 5px 0;"><strong>Email:</strong> {{nuevoCliente.cli_correoelectronico}}</p>
+    <p style="margin: 5px 0;"><strong>Teléfono:</strong> {{nuevoCliente.cli_telefono}}</p>
+    <p style="margin: 5px 0;"><strong>Ciudad:</strong> {{mostrarCiudad}}</p>
+    <p style="margin: 5px 0;"><strong>Dirección:</strong> {{nuevoCliente.cli_direccion}}</p>
+    <h3 style="text-align: center;">Metodo de Pago</h3>
+    <p style="margin: 5px 0;"><strong>Nombre del titular:</strong> {{datosTarjeta.nombre_titular}}</p>
+    <p style="margin: 5px 0;"><strong>Número de tarjeta:</strong> {{numeroTarjetaCensurado}}</p>
+    <p style="margin: 5px 0;"><strong>Mes de expiración:</strong> {{datosTarjeta.mes_expiracion}}</p>
+    <p style="margin: 5px 0;"><strong>Año de expiración:</strong> {{datosTarjeta.anio_expiracion}}</p>
+    <p style="margin: 5px 0;"><strong>CVV:</strong> ***</p>
+    <p style="margin: 5px 0;"><strong>Total a pagar:</strong> ${{subtotal.toFixed(2)}}</p>
+    <h3 style="text-align: center;">Productos</h3>
+    <div *ngFor="let producto of productosAgregados">
+      <img src="{{producto.imagen}}" alt="" style="display: block;max-width: 100px;height: auto;height: auto;">
+      <p style="margin: 5px 0;"><strong>Nombre:</strong> {{producto.nombre}}</p>
+      <p style="margin: 5px 0;"><strong>Cantidad:</strong> {{producto.cantidad}}</p>
+      <p style="margin: 5px 0;"><strong>Precio:</strong> ${{producto.precio}}</p>
+      <p style="margin: 5px 0;"><strong>Total:</strong> ${{(producto.precio * producto.cantidad).toFixed(2)}}</p>
+    </div>
+  </div>
+  
+
+<app-footer></app-footer>

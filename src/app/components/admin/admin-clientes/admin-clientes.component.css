@@ -1,0 +1,225 @@
+.all{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contenido{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-grow: 3;
+    background-color: var(--color-secundario);
+  }
+  
+  .tabla-boton{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    
+  }
+  
+  .table-container {
+      background-color: var(--color-blanco);
+      border-radius: 10px;
+      padding: 0px 20px;
+      max-height: 450px;
+      overflow-y: scroll;
+  }
+  
+  .table-container::-webkit-scrollbar {
+    width: 8px; 
+  }
+  
+  .table-container::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 4px; 
+  }
+  
+  .table-container::-webkit-scrollbar-track {
+    background-color: #f2f2f2; 
+  }
+  
+  .btn-insert {
+      border: none;
+      cursor: pointer;
+      align-self: end;
+      transition: all 0.2s ease;
+  }
+  
+  .btn-insert img{
+    width: 30px;
+  }
+  
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      overflow: scroll;
+  }
+  
+  thead{
+    background-color: transparent;
+    color: #000;
+    text-align: center;
+  }
+  
+  thead th {
+      text-align: center;
+      padding: 10px;
+      border-bottom: 1.8px solid #000;
+  }
+  
+  tbody tr{
+    background-color: transparent;
+  }
+  
+  tbody td {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+  }
+  
+  .btn-edit img, .btn-delete img{
+    width: 30px;
+  }
+  
+  .btn-edit, .btn-delete{
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  button:hover{
+    filter:brightness(1.05);
+  }
+  
+  .btn-edit {
+      margin-right: 5px;
+  }
+  
+  .btn-edit:hover{
+    filter:brightness(1.1);
+  }
+  
+  /* Personaliza el estilo según tus preferencias */
+  /* Estilos para la ventana modal */
+  .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .modal input,
+    .modal button {
+      margin-bottom: 10px;
+    }
+  /* Estilos adicionales si es necesario */
+  /* Estilos generales del formulario */
+  .modal form {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 10px 25px;
+      width: 500px;
+    }
+    
+    /* Estilos para las etiquetas de los campos */
+    .modal form label {
+      margin-bottom: 5px;
+    }
+    
+    /* Estilos para los campos de entrada y textarea */
+    .modal form input,
+    .modal form textarea {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      border-radius: 20px;
+      outline: none;
+    }
+  
+    .modal form textarea{
+      resize: none;
+    }
+    
+    /* Estilos para los botones */
+    .modal form button {
+      padding: 10px;
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 15px;
+      color: #000;
+      outline: none;
+    }
+    
+    /* Estilos para el botón de Cancelar */
+    .modal form .cancelar {
+      margin-right: 10px;
+      width: 100%;
+      color: #fff;
+      background-color: #DE3646;
+      transition: all 0.2s ease;
+    }
+    
+    /* Estilos para el botón de Guardar */
+    .modal form button[type="submit"] {
+      background-color: #5EBE69;
+      width: 100%;
+      color: #fff;
+      transition: all 0.2s ease;
+    }
+    
+    /* Estilos para el botón "Salir sin Guardar" */
+  .btn-exit {
+      color: #000;
+      padding: 10px;
+      border: none;
+      border-radius: 100%;
+      cursor: pointer;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+    
+    .campos{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+      }
+  
+      .campos-1, .campos-2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+.lista-generos, .lista-ciudades{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.lista-ciudades select{
+  width: 50px;
+}

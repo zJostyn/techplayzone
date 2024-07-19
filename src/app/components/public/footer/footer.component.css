@@ -1,0 +1,27 @@
+a{
+    text-decoration: none;
+    font-size: 17px;
+}
+
+p{
+    font-size: 17px;
+    
+
+}
+
+.part1{
+    text-align: justify;
+}
+
+a:hover{
+    color: #0d6efd !important;
+}
+i{
+    font-size: 25px;
+}
+
+footer{
+    overflow-x: hidden;
+} 
+
+

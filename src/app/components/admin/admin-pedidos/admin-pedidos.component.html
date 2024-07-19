@@ -1,0 +1,39 @@
+<div style = "display: flex; height: 100vh;">
+    <app-dashboard></app-dashboard>
+    <div class = "all">
+        <app-barra-superior></app-barra-superior>
+        <div class = "contenido">
+            <div class = "tabla-boton">
+                <div class="table-container">
+                    <table>
+                        <thead class = "poppins-medium">
+                            <tr>
+                                <th>Estado</th>
+                                <th>Fecha de pedido</th>
+                                <th>Cliente</th>
+                                <th>Producto</th>
+                                <th>Imagen</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class = "poppins-regular" *ngFor="let pedido of pedidos;">
+                                <td><div class = "estado-pedido" [ngStyle]="{'background-color': getColor(pedido.estado)}" (click)="cambiarEstado(pedido, pedido.id_pedido)">{{pedido.estado}}</div></td>
+                                <td>{{pedido.ped_fechapedido | date:'dd/MM/yyyy'}}</td>
+                                <td>{{pedido.cliente}}</td>
+                                <td>{{pedido.producto}}</td>
+                                <td><img style = "width: 80px;" src="{{pedido.imagen}}" alt=""></td>
+                                <td>${{pedido.precio}}</td>
+                                <td>{{pedido.cantidad}}</td>
+                                <td>${{pedido.total}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

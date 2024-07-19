@@ -1,0 +1,52 @@
+
+<div style = "display: flex; height: 100vh;">
+    <app-dashboard></app-dashboard>
+<div class = "all">
+    <app-barra-superior></app-barra-superior>
+    <div class = "contenido">
+        <div class = "tabla-boton">
+            <button class="btn-insert" (click)="mostrarModalInsertar()"><img src="../../../../assets/btn insertar.png" alt=""></button>
+            <div class="table-container">
+                <table>
+                    <thead class = "poppins-medium">
+                        <tr>
+                            <th>...</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class = "poppins-regular" *ngFor="let categoria of categorias;">
+                            <td>{{categoria.id_categoria}}</td>
+                            <td>{{categoria.cat_nombre}}</td>
+                            <td>{{categoria.cat_descripcion}}</td>
+                            <td>
+                                <button class="btn-edit" (click)="mostrarModalEditar(categoria)"><img src="../../../../assets/btn editar.png" alt=""></button>
+                                <button class="btn-delete" (click)="eliminarCategoria(categoria.id_categoria)"><img src="../../../../assets/btn eliminar.png" alt=""></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        
+        <div class="modal" *ngIf="modalVisible">
+              <form (submit)="guardarCategoria()">
+                <h3 class = "poppins-semibold" style = "text-align: center;margin-bottom: 5px;">{{funcion}}</h3>
+                <label class = "poppins-medium" for="catNombre">Nombre:</label>
+                <input class = "poppins-regular" type="text" id="catNombre" name="catNombre" [(ngModel)]="nuevaCategoria.cat_nombre" required>
+          
+                <label class = "poppins-medium"  for="catDescripcion">Descripción:</label>
+                <textarea class = "poppins-regular" id="catDescripcion" name="catDescripcion" rows="4" [(ngModel)]="nuevaCategoria.cat_descripcion" required></textarea>
+          
+                <button class = "poppins-medium" type="submit">Guardar</button>
+                <button class = "poppins-medium cancelar" type="button" (click)="cerrarModal()">Cancelar</button>
+                <button type="button" class="btn-exit" (click)="cerrarModal()"><i class="fa-solid fa-xmark"></i></button>
+              </form>
+          </div>
+          
+        </div>    
+    </div>    
+</div>

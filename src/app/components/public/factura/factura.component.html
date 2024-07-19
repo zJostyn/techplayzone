@@ -1,0 +1,53 @@
+<body>
+    <div class="factura" *ngFor="let pedido of pedido">
+        <nav class="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" routerLink="/public/home">TECHPLAYZONE</a>
+                <a class="fecha"> Fecha del Pedido: {{pedido.ped_fechapedido | date: 'dd/MM/yyyy'}}</a>
+                <a class="estado"> Estado del Pedido: {{pedido.estado}}</a>
+            </div>
+        </nav>
+        
+        <div class="detalles">
+            <h1>Hola!</h1>
+            <p>Muchas gracias por preferirnos, a continuación estan los detalles de tu pedido.</p>
+            <a>Cliente, {{pedido.cliente}}</a>
+        </div>
+
+        <div class="detalles" style="margin-top: 20px;">
+            <h5>Detalles del Pedido:</h5>
+            <div class="detallesdireccion">
+                <a class="direccion"> Dirección: {{pedido.direccion}}</a> <br>
+                <a class="ciudad"> Ciudad: {{pedido.ciudad}}</a> <br>
+                <a class="email"> Email: {{pedido.email}}</a> <br>
+                <a class="telefono"> Telefono: {{pedido.telefono}}</a> <br>
+            </div>
+        </div>
+    </div>
+
+    <div class="productos" *ngFor="let pedido of pedido">
+        <h3>PRODUCTOS</h3>
+        <div class="carrito-contenido">
+          <div class = "carrito-producto">
+            <img src="{{pedido.imagen}}" alt="">
+            <div class = "info">
+                <h6>{{pedido.producto}}</h6>
+                <p><strong>Cantidad: </strong>{{pedido.cantidad}}</p>
+                <p><strong>Precio: </strong>${{pedido.precio}}</p>
+                <p><strong>Total: </strong>${{pedido.total}}</p>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="subtotal">
+            <p><strong>Total del Pedido: </strong>${{pedido.total}}</p>
+        </div>
+        <button class="imprimir" (click)="Imprimir()">Imprimir o PDF</button>
+        <button class="regresar" routerLink="/public/home">Regresar</button>
+    </div>
+</body>
+
+<footer>
+    <a>Le enviamos nuestros mejores deseos, TECHPLAYZONE Team</a> <br>
+    <a>© TECHPLAYZONE, Machala, El Oro, Ecuador, 2024</a>
+</footer>

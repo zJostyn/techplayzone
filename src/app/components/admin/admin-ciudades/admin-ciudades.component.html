@@ -1,0 +1,45 @@
+<div style = "display: flex; height: 100vh;">
+    <app-dashboard></app-dashboard>
+    <div class = "all">
+        <app-barra-superior></app-barra-superior>
+        <div class = "contenido">
+            <div class = "tabla-boton">
+                <button class="btn-insert" (click)="mostrarModalInsertar()"><img src="../../../../assets/btn insertar.png" alt=""></button>
+                <div class="table-container">
+                    <table>
+                        <thead class = "poppins-medium">
+                            <tr>
+                                <th>...</th>
+                                <th>Nombre</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class = "poppins-regular" *ngFor="let ciudad of ciudades;">
+                                <td>{{ciudad.id}}</td>
+                                <td>{{ciudad.nombre}}</td>
+                                <td>
+                                    <button class="btn-edit" (click)="mostrarModalEditar(ciudad)"><img src="../../../../assets/btn editar.png" alt=""></button>
+                                    <button class="btn-delete" (click)="eliminarCiudad(ciudad.id)"><img src="../../../../assets/btn eliminar.png" alt=""></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="modal" *ngIf="modalVisible">
+                  <form (submit)="guardarCiudad()">
+                    <h3 class = "poppins-semibold" style = "text-align: center;margin-bottom: 5px;">{{funcion}}</h3>
+                    <label class = "poppins-medium" for="ciuNombre">Nombre:</label>
+                    <input class = "poppins-regular" type="text" id="ciuNombre" name="ciuNombre" [(ngModel)]="nuevaCiudad.nombre" required>
+              
+                    <button class = "poppins-medium" type="submit">Guardar</button>
+                    <button class = "poppins-medium cancelar" type="button" (click)="cerrarModal()">Cancelar</button>
+                    <button type="button" class="btn-exit" (click)="cerrarModal()"><i class="fa-solid fa-xmark"></i></button>
+                  </form>
+                </div>
+              
+        </div>
+    </div>
+</div>

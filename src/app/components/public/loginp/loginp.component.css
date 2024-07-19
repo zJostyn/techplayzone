@@ -1,0 +1,91 @@
+.contenido{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-primario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-all h2{
+    font-size: 25px;
+    color: var(--color-logo);
+}
+
+.form-all{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    gap: 20px;
+    font-size: 16px;
+}
+
+.form-all form{
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+}
+
+.form-all form input{
+    display: block;
+    padding: 5px 10px;
+    font-size: 1em;
+}
+
+.form-all form label{
+    font-size: 1em;
+}
+
+.form-all form input, .form-all form button{
+    width: 400px;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.form-all form button{
+    background-color: var(--color-boton-azul-claro);
+    color: var(--color-blanco);
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.2s ease-in;
+}
+
+.form-all form button:hover{
+    background-color: var(--color-boton-azul-oscuro);
+}
+
+.password-container{
+    position: relative;
+}
+
+.password-container span{
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    z-index: 1000;
+    color: var(--color-primario);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+@media (max-width: 450px) {
+    .form-all{
+        font-size: 10px;
+    }
+
+    .form-all form input, .form-all form button{
+       width: 300px;
+    }
+  }
+
+  @media (max-width: 300px) {
+    .form-all form input, .form-all form button{
+       width: 200px;
+    }
+  }

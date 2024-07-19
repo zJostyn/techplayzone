@@ -1,0 +1,13 @@
+<div class = "barra">
+    <h2 class = "titulo poppins-medium">{{apartado}}</h2>
+    <div class = "barra-opciones">
+        <img class = "logo-usuario" src="https://sagittaautomotive.com/wp-content/themes/ignition/images/user-icon-dark.png" alt="">
+        <p class = "poppins-medium">Administrador</p>
+        <div class="dropdown" (click)="toggleDropdown()">
+          <button class="dropbtn"><img id = "flip" src="../../../../assets/Flip.png" alt=""></button>
+          <div class="dropdown-content" [ngClass]="{'show': isDropdownOpen}">
+            <a id = "salir" routerLink="/public/login" (click)="logout()" class = "poppins-regular">Salir</a>
+          </div>
+        </div>
+    </div>   
+</div>

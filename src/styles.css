@@ -1,0 +1,223 @@
+body, *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Arial', 'Times New Roman';
+    
+}
+
+:root{
+    --color-primario: #041737;
+    --color-secundario: #F0F1F3;
+    --color-blanco: #FFFFFF;
+    --color-logo: orange;
+    --color-boton-azul-claro: #3963AD;
+    --color-boton-azul-oscuro: #234c92;
+}
+
+/* Poppins Styles */
+.poppins-thin {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .poppins-thin-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .poppins-extralight {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .poppins-extralight-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+  }
+  
+  .poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .poppins-medium-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .poppins-bold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .poppins-extrabold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .poppins-extrabold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+  .poppins-black {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .poppins-black-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+  
+
+/* Estilos tablas y ventanas modales */
+table{
+  font-size: 14px !important;
+}
+
+select {
+  padding: 8px 16px; /* Añadir espacio interno */
+  font-size: 16px; /* Tamaño de fuente */
+  border: 1px solid #ccc; /* Borde */
+  border-radius: 4px; /* Bordes redondeados */
+  background-color: #fff; /* Fondo blanco */
+  color: #333; /* Color de texto */
+  appearance: none; /* Quitar la apariencia nativa del sistema operativo */
+  outline: none; /* Quitar el borde de enfoque */
+  cursor: pointer; /* Cursor de flecha */
+}
+
+/* Estilo para las opciones de la lista desplegable */
+option {
+  padding: 8px; /* Añadir espacio interno */
+  font-size: 16px; /* Tamaño de fuente */
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fast {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes aparecerModal{
+  from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+/* Enlistar productos */
+.container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 20px 50px;
+  border-top: solid 1px #c9c9c9;
+}
+
+.product-item{
+  cursor: pointer;
+}
+
+.card{
+  border: none;
+  height: 100%;
+  border-radius: 0%;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover{
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.1); /* sombra */
+}
+
+.product-item img {
+  height: 250px;
+  object-fit: contain;
+  border: none;
+  padding: 0px 20px;
+  padding-top: 20px;
+}
+
+.boton-add{
+  border: none;
+  border-radius: 0%;
+}

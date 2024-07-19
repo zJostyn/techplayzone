@@ -1,0 +1,35 @@
+<div style = "display: flex; height: 100vh;">
+    <app-dashboard></app-dashboard>
+    <div class = "all">
+        <app-barra-superior></app-barra-superior>
+        <div class = "contenido">
+            <div class = "card card-clientes">
+                <h3 class = "card-title poppins-regular">Clientes</h3>
+                <div class = "card-content">
+                    <p class = "poppins-medium">{{nClientes}}</p>
+                </div>
+            </div>
+
+            <div class = "card card-productos">
+                <h3 class = "card-title poppins-regular">Productos</h3>
+                <div class = "card-content">
+                    <p class = "poppins-medium">{{nProductos}}</p>
+                </div>
+            </div>
+
+            <div class = "card card-pedidos">
+                <h3 class = "card-title poppins-regular">Pedidos</h3>
+                <div class = "card-content">
+                    <p class = "poppins-medium">{{nPedidos}}</p>
+                </div>
+            </div>
+
+            <div class = "card card-ganancias">
+                <h3 class = "card-title poppins-regular">Ganancias</h3>
+                <div class = "card-content">
+                    <p class = "poppins-medium">${{nGanancias}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

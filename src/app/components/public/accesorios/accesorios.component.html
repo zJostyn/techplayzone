@@ -1,0 +1,54 @@
+<app-navbar *ngIf="isVisible"></app-navbar>
+<h2>Accesorios</h2>
+
+<select #txt name="orden" id="orden" (change)="ordenar(txt.value)">
+  <option value="ordenAZ">Orden A-Z</option>
+  <option value="ordenZA">Orden Z-A</option>
+  <option value="ordenMayorMenor">Orden por mayor precio</option>
+  <option value="ordenMenorMayor">Orden por menor precio</option>
+</select>
+
+<div class="container">
+      <div *ngFor="let product of products" class="product-item">
+        <div class="card" (click)="mostrarDetalleProducto(product)">
+          <img [src]="product.imagen" class="card-img-top" alt="{{ product.nombre }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.nombre }}</h5>
+            <p class="card-text">{{ product.precio | currency }}</p>
+          </div>
+          <button class="btn btn-primary boton-add" (click)="addToCart(product); $event.stopPropagation()">Añadir al carrito</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- Ventana modal -->
+<div class="modal" *ngIf="estaSeleccionado">
+  <div class="modal-content">
+    
+    <div class = "informacion"> 
+      <img src="{{productoSeleccionado.imagen}}" alt="{{productoSeleccionado.nombre}}">
+      <div class = "contenido">
+      <p class = "subtitulo-producto">home/tienda/accesorios/{{productoSeleccionado.nombre}}</p>
+      <h2>{{productoSeleccionado.nombre}}</h2>
+        <hr>
+        <div [ngClass]="{'disponible': productoSeleccionado.stock > 0, 'agotado': productoSeleccionado.stock === 0}">
+          {{ productoSeleccionado.stock > 0 ? 'Disponible' : 'Agotado'}}
+        </div>        
+        <h3 class = "precio">${{productoSeleccionado.precio}}</h3>
+        <p><strong>Categoría: </strong>{{productoSeleccionado.categoria}}</p>
+        <p class = "descripcion"><strong>Descripción: </strong>{{productoSeleccionado.descripcion}}</p>
+        <div class = "botones">
+          <input type="number" min="1" [(ngModel)]="productoSeleccionado.cantidad">
+          <button class="btn btn-primary boton-add" (click) = "addToCartWithCopy(productoSeleccionado)">Añadir al carrito</button>
+          <button class="btn btn-primary boton-buy" (click) = "comprarProducto(productoSeleccionado)">Comprar</button>
+        </div>
+      </div> 
+    </div>
+   
+    <span class="close" (click)="cerrarModal()">&times;</span>
+
+  </div>
+</div>
+
+
+<app-footer></app-footer>

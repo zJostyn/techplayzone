@@ -1,0 +1,94 @@
+<div style = "display: flex; height: 100vh;">
+    <app-dashboard></app-dashboard>
+<div class = "all">
+    <app-barra-superior></app-barra-superior>
+    <div class = "contenido">
+        <div class = "tabla-boton">
+            <button class="btn-insert" (click)="mostrarModalInsertar()"><img src="../../../../assets/btn insertar.png" alt=""></button>
+            <div class="table-container">
+                <table>
+                    <thead class = "poppins-medium">
+                        <tr>
+                            <th>...</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo electrónico</th>
+                            <th>Teléfono</th>
+                            <th>Género</th>
+                            <th>Ciudad</th>
+                            <th>Dirección</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class = "poppins-regular" *ngFor="let cliente of clientes;">
+                            <td>{{cliente.id}}</td>
+                            <td>{{cliente.nombre}}</td>
+                            <td>{{cliente.apellido}}</td>
+                            <td>{{cliente.correoelectronico}}</td>
+                            <td>{{cliente.telefono}}</td>
+                            <td>{{cliente.genero}}</td>
+                            <td>{{cliente.ciudad}}</td>
+                            <td>{{cliente.direccion}}</td>
+                            <td>
+                                <button class="btn-edit" (click)="mostrarModalEditar(cliente)"><img src="../../../../assets/btn editar.png" alt=""></button>
+                                <button class="btn-delete" (click)="eliminarCliente(cliente.id)"><img src="../../../../assets/btn eliminar.png" alt=""></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        
+        <div class="modal" *ngIf="modalVisible">
+              <form (submit)="guardarCliente()">
+                <h3 class = "poppins-semibold" style = "text-align: center;margin-bottom: 5px;">{{funcion}}</h3>
+                <div class = "campos">
+                    <div class = "campos-1">
+                        <label class = "poppins-medium" for="cliNombre">Nombre:</label>
+                        <input class = "poppins-regular" type="text" id="cliNombre" name="cliNombre" [(ngModel)]="nuevoCliente.cli_nombre" required>
+        
+                        <label class = "poppins-medium" for="cliApellido">Apellido:</label>
+                        <input class = "poppins-regular" type="text" id="cliApellido" name="cliApellido" [(ngModel)]="nuevoCliente.cli_apellido" required>
+        
+                        <label class = "poppins-medium" for="cliCorreo">Correo electrónico:</label>
+                        <input class = "poppins-regular" type="email" id="cliCorreo" name="cliCorreo" [(ngModel)]="nuevoCliente.cli_correoelectronico" required>
+        
+                        <label class = "poppins-medium" for="cliTelefono">Teléfono:</label>
+                        <input class = "poppins-regular" type="text" id="cliTelefono" name="cliTelefono" [(ngModel)]="nuevoCliente.cli_telefono" required>
+                    </div>
+    
+                    <div class = "campos-2">
+                        <label class = "poppins-medium" id = "cliGenero" for="cliGenero">Género:</label>
+                        <div class = "lista-generos">
+                            <input type="text" style = "margin: 0;" value="{{mostrarGenero}}" readonly>
+                        <select id = "cliGenero" (change)="onGenreSelected($event)">
+                            <option [value]="-1"></option>
+                            <option *ngFor="let genero of generos" [value]="genero.id_genero">{{ genero.nombre }}</option>
+                          </select>
+                        </div>
+                        
+                            <label class = "poppins-medium" id = "cliCiudad" for="cliCiudad">Ciudad:</label>
+                            <div class = "lista-ciudades">
+                            <input type="text" style = "margin: 0;" value="{{mostrarCiudad}}" readonly>
+                            <select id = "cliCiudad" (change)="onCitySelected($event)">
+                              <option [value]="-1"></option>
+                              <option *ngFor="let ciudad of ciudades" [value]="ciudad.id">{{ ciudad.nombre }}</option>
+                            </select>
+                        </div>
+                        <label class = "poppins-medium"  for="cliDireccion">Dirección:</label>
+                        <textarea class = "poppins-regular" id="cliDireccion" name="cliDireccion" rows="4" [(ngModel)]="nuevoCliente.cli_direccion" required></textarea>    
+                    </div>
+                    
+                </div>
+            
+                <button class = "poppins-medium" type="submit">Guardar</button>
+                <button class = "poppins-medium cancelar" type="button" (click)="cerrarModal()">Cancelar</button>
+                <button type="button" class="btn-exit" (click)="cerrarModal()"><i class="fa-solid fa-xmark"></i></button>
+              </form>
+            </div>
+          
+        </div>    
+    </div>    
+</div>

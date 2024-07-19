@@ -1,0 +1,187 @@
+body {
+    position: relative;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #001F3F;
+    border-bottom: 1px solid #ccc;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.navbar-brand {
+    font-weight: bold; 
+    color: #FFA500 !important; 
+    font-style: italic;
+  }
+.navbar-inicio {
+    color: #FFFFFF !important; 
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none; 
+    display: flex;
+    align-items: center; 
+}
+  
+.logo-img {
+    width: 20px; 
+    margin-right: 5px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.detalles {
+    position: relative;
+    height: 160px;
+    width: 500px;
+    left: 10px;
+    top: 20px;
+    border-radius: 5px;
+    background-color: #001F3F;
+    color: white;
+    border: 1px solid #ccc;
+}
+
+.detalles h1, h5{
+    position: relative;
+    text-align: left;
+    top: 10px;
+    margin-left: 10px;
+    color: rgb(212, 158, 8);
+}
+
+.detalles p {
+    text-align: justify;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.detalles a {
+    margin-left: 50px;
+    color: yellow;
+}
+
+.detallesdireccion {
+    position: relative;
+    margin-top: 20px;
+}
+
+  /* Productos */
+
+ 
+.productos {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    width: 30%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.productos h3 {
+    color: #333333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.carrito-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.carrito-contenido img {
+    width: 100px;
+    height: auto;
+}
+
+.carrito-contenido .info {
+    font-size: 12px;
+    text-align: left;
+}
+
+.carrito-contenido p, .carrito-contenido h6 {
+    margin: 0;
+}
+
+.carrito-producto {
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid #b1b1b1;
+    padding-top: 15px;
+    width: 100%;
+}
+
+.imprimir {
+    position: relative;
+    display: block;
+    background-color: #0d6efd;
+    border-radius: 3px;
+    width: 130px;
+    height: 30px;
+    border: none;
+    color: white;
+}
+
+.regresar {
+    position: relative;
+    display: block;
+    background-color: #0d6efd;
+    border-radius: 3px;
+    width: 130px;
+    height: 30px;
+    border: none;
+    color: white;
+    top: -30px;
+    left: 230px;
+}
+
+footer {
+    position: relative;
+    text-align: center;
+    color: black;
+    margin-top: 110px;
+}
+
+  @media print {
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        size: A4 landscape;
+    }
+    .factura {
+        page-break-after: always;
+    }
+    .factura:nth-of-type(n+2) {
+        display: none;
+    }
+    .productos img {
+      max-width: 100%;
+      height: auto;
+    }
+    .imprimir {
+        display: none;
+    }
+    .regresar {
+        display: none;
+    }
+    footer {
+        position: absolute;
+        top: 500px;
+        left: 250px;
+    }
+  }

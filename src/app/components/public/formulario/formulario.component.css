@@ -1,0 +1,170 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+  }
+  
+  .contenido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 25px;
+    background: linear-gradient(90deg, #041737 60%, #082353 40.1%);
+    gap: 10px;
+  }
+
+  .contenido form{
+    padding:20px;
+    width:70%;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  }
+  
+  .contenido form .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+  }
+  
+  .contenido form .row .col{
+    flex:1 1 250px;
+  }
+  
+  .contenido form .row .col .title{
+    font-size: 20px;
+    color:#333;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+  }
+  
+  .contenido form .row .col .inputBox{
+    margin:15px 0;
+  }
+  
+  .contenido form .row .col .inputBox span{
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .contenido form .row .col .inputBox input, select{
+    width: 100%;
+    border:1px solid #ccc;
+    padding:10px 15px;
+    font-size: 15px;
+    text-transform: none;
+  }
+  
+  .contenido form .row .col .inputBox input:focus{
+    border:1px solid #000;
+  }
+  
+  .contenido form .row .col .flex{
+    display: flex;
+    gap:15px;
+  }
+  
+  .contenido form .row .col .flex .inputBox{
+    margin-top: 5px;
+  }
+  
+  .contenido form .row .col .inputBox img{
+    height: 34px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+  }
+  
+  .contenido form .submit-btn{
+    width: 100%;
+    padding:12px;
+    font-size: 17px;
+    background: #27ae60;
+    color:#fff;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  
+  .contenido form .submit-btn:hover{
+    background: #2ecc71;
+  }
+
+  /* Productos */
+
+  .productos{
+    align-self: flex-start;
+    position: relative;
+    width:30%;
+    height: 100%;
+    background-color: #fff;
+    overflow: auto;
+  }
+
+  .productos h3{
+    color: #333333;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .productos::-webkit-scrollbar {
+    width: 8px; 
+  }
+  
+  .productos::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 4px; 
+  }
+  
+  .productos::-webkit-scrollbar-track {
+    background-color: #f2f2f2; 
+  }
+
+  .carrito-contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 20px;
+    gap: 10px;
+    flex-grow: 2;
+  }
+  
+  .carrito-contenido img{
+    width: 30%;
+  }
+  
+  .carrito-contenido .info{
+    font-size: 12px;
+  }
+  
+  .carrito-contenido p, .carrito-contenido h6{
+    margin: 0;
+  }
+  
+  .carrito-producto{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+    border-top: 1px solid #b1b1b1;
+    padding: 15px;
+  }
+
+  .subtotal{
+    font-style: italic;
+    color: blue;
+  }
+  
+  .lista-generos, .lista-ciudades{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  #factura {
+    display: none;
+  }

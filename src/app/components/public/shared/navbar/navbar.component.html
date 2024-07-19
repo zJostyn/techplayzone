@@ -1,0 +1,82 @@
+<nav class="navbar">
+    <div class="container-fluid">
+        <a  class="navbar-brand" routerLink="'/public/home" routerLinkActive="active">TECHPLAYZONE</a>
+        <form class="d-flex" role="search " style=" margin-right: 160px;">
+            <div class="input-group" id="busqueda">
+                <input #buscarTxt class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+                <button (click)="buscarProducto(buscarTxt.value)" class="btn btn-warning " type="submit">
+                    <img src="../../../../assets/buscar.png" alt="Icono de búsqueda">
+                </button>
+            </div>
+        </form>
+        <div>
+            <img src="../../../../assets/sesion.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" id="avatarlog" alt="">
+            <div *ngIf="infoUsuario[0] != null">
+                <div *ngFor="let usuario of infoUsuario">
+                    <button class="txtUser" id="loginBtn">{{infoUsuario[0].usu_user}}</button>
+                </div>
+            </div>
+            <button class="login" id="loginBtn" *ngIf="infoUsuario[0] == null">Iniciar sesión / Registrarse</button>
+        </div>
+        <div id="panel" class="hidden" *ngIf="infoUsuario[0] != null">
+            <p>¡Bienvenido!</p>
+            <div *ngIf="infoUsuario[0].id_tipo == '1'">
+                <button id="inicioBtn" routerLink="/public/home" routerLinkActive="active">Inicio</button>
+                <button id="pedidosBtn" routerLink="/public/mispedidos" routerLinkActive="active">Mis Pedidos</button>
+                <button id="salirBtn" (click)="Salir()">Salir</button>
+            </div>
+            <div *ngIf="infoUsuario[0].id_tipo == '2'">
+                <button id="accederBtn" routerLink="/admin/dashboard" routerLinkActive="active">Panel</button>
+            </div>
+        </div>   
+        <div id="panel" class="hidden" *ngIf="infoUsuario[0] == null">
+            <p>¡Bienvenido!</p>
+            <button id="accederBtn" routerLink="/public/login" routerLinkActive="active">Acceder</button>
+            <a>No tienes una cuenta?</a>
+            <button id="registrarseBtn" routerLink="/public/register" routerLinkActive="active">Registrarse</button>
+        </div>   
+        <div class = "carrito-all" (click)="abrirCarrito()">
+            <i class="fa-solid fa-cart-shopping carrito"></i> 
+            <span class = "numProductos">{{numProductos}}</span>
+        </div>
+    </div>
+</nav>
+
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/public/juegos" routerLinkActive="active">JUEGOS</a>
+      </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/public/computadoras"routerLinkActive="active">COMPUTADORAS/PORTATILES</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/public/consolas" routerLinkActive="active">CONSOLAS</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/public/accesorios" routerLinkActive="active">ACCESORIOS</a>
+    </li>
+</ul>
+
+<div class = "modal" *ngIf = "mostrarCarrito">
+    <div class="carrito-barra">
+        <h3>Mi carrito</h3>
+        <div class="carrito-contenido">
+          <div class = "carrito-producto" *ngFor="let producto of productosAgregados">
+            <img src="{{producto.imagen}}" alt="">
+            <div class = "info">
+                <h6>{{producto.nombre}}</h6>
+                <p><strong>Cantidad: </strong>{{producto.cantidad}}</p>
+                <p><strong>Precio: </strong>${{producto.precio}}</p>
+                <p><strong>Total: </strong>${{(producto.precio * producto.cantidad).toFixed(2)}}</p>
+            </div>
+            <span class="close-product" (click)="eliminarProducto(producto.id)">&times;</span>
+          </div>
+          <span class="close" (click)="cerrarCarrito()">&times;</span>
+        </div>
+        <div class = "subtotal-generar">
+            <p>Subtotal: ${{ subtotal.toFixed(2) }}</p>
+            <a class = "generar-pedido" (click) = "generarPedido()">Finalizar compra</a>
+        </div>
+      </div>
+</div>
+  

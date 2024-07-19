@@ -1,0 +1,8 @@
+<div class="modal-alerta" *ngIf = "showAlert">
+    <div class="alerta">
+        <img src="../assets/{{imagenMessage}}.png" alt="Éxito" class="icono-exito">
+        <p class="alerta-info" role="alert">{{message}}</p>
+        <span class="close-alert" (click) = "cerrarAlerta()">&times;</span>
+    </div>
+</div>
+<router-outlet></router-outlet>

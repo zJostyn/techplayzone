@@ -1,0 +1,60 @@
+.modal-alerta {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: 5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: aparecer 0.3s ease-out; /* Animación de aparecer */
+}
+
+.alerta {
+    position: relative;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 300px;
+    margin: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    padding: 25px;
+    border-radius: 5px;
+    animation: aparecer 0.3s ease-out; /* Animación de zoomIn */
+}
+
+.alerta p{
+    text-align: center;
+}
+
+.icono-exito {
+    width: 50px; /* Tamaño de la imagen de éxito */
+    text-align: center;
+}
+
+/* Animación de aparecer */
+@keyframes aparecer {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Animación de zoomIn */
+@keyframes zoomIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+.close-alert{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #000;
+  }

@@ -1,0 +1,362 @@
+body {
+  font-family: Arial, sans-serif;
+  
+}
+
+#busqueda {
+  position: relative;
+  left: 195px;
+}
+
+#avatarlog {
+  position: relative;
+  width: 50px ;
+  height: 50px;
+  left: 65px;
+}
+
+.login {
+  position: relative;
+  left: 80px;
+  background-color: transparent !important;
+  color: white;
+  border: none;
+}
+.txtUser {
+  position: relative;
+  top: -30px;
+  left: 120px;
+  background-color: transparent !important;
+  color: white;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#panel {
+  position: absolute !important;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 10px;
+  width: 200px;
+  height: 160px;
+  top: 60px;
+  left: 1065px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#panel button {
+  position: relative;
+  display: block;
+  background-color: #0d6efd;
+  border-radius: 3px;
+  width: 130px;
+  height: 30px;
+  border: none;
+  color: white;
+}
+
+#panel button:hover {
+  background-color: #074d76;
+}
+
+#panel p {
+  position: relative;
+  left: 50px;
+  top: 10px;
+}
+
+#panel #accederBtn {
+  position: relative;
+  left: 35px;
+}
+
+#panel a {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+#panel #registrarseBtn{
+  position: relative;
+  top: 15px;
+  left: 35px;
+}
+
+#panel #inicioBtn {
+  position: relative;
+  left: 35px;
+}
+
+#panel #pedidosBtn {
+  position: relative;
+  top: 10px;
+  left: 35px;
+}
+
+#panel #salirBtn{
+  position: relative;
+  top: 20px;
+  left: 35px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #001F3F;
+  border-bottom: 1px solid #ccc;
+}
+.nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc;}
+
+.nav-link {
+  color: #333!important;
+  text-decoration: none;
+  padding: 10px;
+  
+}
+
+.nav-link {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  border-radius: 25px; /* Redondear las esquinas */
+
+}
+
+.nav-link:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.1); /* Color de fondo más oscuro */
+  font-weight: bold; 
+}
+
+
+.navbar-brand {
+  font-weight: bold; 
+  color: #FFA500 !important; 
+  font-style: italic;
+}
+.navbar-inicio {
+  color: #FFFFFF !important; 
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: none; 
+  display: flex;
+  align-items: center; 
+}
+
+.logo-img {
+  width: 20px; 
+  margin-right: 5px;
+}
+/* Estilos para el cuadro de texto */
+.form-control.orange-border {
+  border: 2px solid orange;
+  border-radius: 5px; 
+}
+
+/* Estilos para el botón Search */
+.btn-orange {
+  background-color: orange;
+  color: orange;
+}
+
+.btn img {
+  max-width: 30px;
+  height: auto;
+  display: block;
+}
+
+.carrito{
+  color: #fff;
+  cursor: pointer;
+}
+
+.carrito-all{
+  position: relative;
+  cursor: pointer;
+}
+
+.numProductos{
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  color: #fff;
+  background-color: orange;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+}
+
+/**/
+/* CSS */
+@keyframes aparecerDesdeDerecha {
+from {
+  transform: translateX(100%);
+}
+to {
+  transform: translateX(0);
+}
+}
+
+
+.carrito-barra {
+position: fixed;
+top: 0;
+right: 0;
+width: 300px;
+height: 100%;
+background-color: #fff;
+z-index: 1000;
+animation: aparecerDesdeDerecha 0.3s ease forwards; /* Aplicar la animación */
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+}
+
+.carrito-contenido {
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+padding: 20px;
+gap: 10px;
+flex-grow: 2;
+overflow: auto;
+}
+
+.carrito-contenido img{
+width: 30%;
+}
+
+.carrito-contenido .info{
+font-size: 12px;
+flex-grow: 2;
+}
+
+.carrito-contenido p, .carrito-contenido h6{
+margin: 0;
+}
+
+.carrito-producto{
+display: flex;
+justify-content: flex-start;
+align-items: center;
+gap: 15px;
+border-bottom: 1px solid #b1b1b1;
+padding: 15px;
+}
+
+.close{
+position: absolute;
+top: 10px;
+right: 10px;
+cursor: pointer;
+color: #fff;
+}
+
+.modal {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+justify-content: center;
+align-items: center;
+animation: aparecerModal 0.3s ease forwards; /* Aplicar la animación */
+}
+
+.carrito-barra h3{
+text-align: center;
+background-color: var(--color-primario);
+padding: 24px;
+margin: 0px;
+color: #fff;
+}
+
+.carrito-barra::-webkit-scrollbar {
+width: 8px; 
+}
+
+.carrito-barra::-webkit-scrollbar-thumb {
+background-color: #888; 
+border-radius: 4px; 
+}
+
+.carrito-barra::-webkit-scrollbar-track {
+background-color: #f2f2f2; 
+}
+
+.close-product{
+cursor: pointer;
+}
+
+.subtotal-generar{
+color: #fff;
+background-color: var(--color-primario);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.subtotal-generar p{
+display: grid;
+place-content: center;
+flex-grow: 2;
+margin: 0;
+padding: 10px;
+}
+
+.generar-pedido{
+width: 100%;
+background-color: orange;
+color: #fff;
+height: 50px;
+display: grid;
+place-content: center;
+list-style: none;
+text-decoration: none;
+cursor: pointer;
+}
+
+
+.btn-warning {
+background-color: #ffc107; /* Color de fondo original */
+color: #fff; /* Color del texto */
+transition: background-color 0.3s; /* Transición suave */
+border-top-left-radius: 0; /* Redondear la esquina superior izquierda */
+border-bottom-left-radius: 0; /* Redondear la esquina inferior izquierda */
+border-top-right-radius: 25px; /* Ajustar el redondeo de la esquina superior derecha */
+border-bottom-right-radius: 25px; /* Ajustar el redondeo de la esquina inferior derecha */
+width: 50px; 
+height: 50px
+}
+
+/* Estilo para cambiar el color al pasar el mouse */
+.btn-warning:hover {
+background-color: #73d5ff; /* Nuevo color de fondo al pasar el mouse */
+}
+
+.btn {
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+.form-control {
+border-top-left-radius: 25px; /* Redondear la esquina superior izquierda */
+border-bottom-left-radius: 25px; /* Redondear la esquina inferior izquierda */
+width: 300px;
+}

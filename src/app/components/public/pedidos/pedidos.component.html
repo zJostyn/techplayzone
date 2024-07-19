@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div class="mispedidos" style = "display: flex;">
+    <div class = "all">
+        <div class = "contenido">
+            <div class = "tabla-boton">
+                <div class="table-container">
+                    <table>
+                        <thead class = "poppins-medium">
+                            <tr>
+                                <th>Fecha de pedido</th>
+                                <th>Producto</th>
+                                <th>Imagen</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Total</th>
+                                <th>Factura</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class = "poppins-regular" *ngFor="let pedido of pedidos;">
+                                <td>{{pedido.ped_fechapedido | date:'dd/MM/yyyy'}}</td>
+                                <td>{{pedido.producto}}</td>
+                                <td><img style = "width: 80px;" src="{{pedido.imagen}}" alt=""></td>
+                                <td>${{pedido.precio}}</td>
+                                <td>{{pedido.cantidad}}</td>
+                                <td>${{pedido.total}}</td>
+                                <td>
+                                    <button (click)="verFactura(pedido.id_pedido)"
+                                    style="border: none; background-color: transparent;">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/950/950258.png"
+                                    style="height: 40px; width: 40px;">
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

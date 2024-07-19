@@ -1,0 +1,72 @@
+<div style = "display: flex; height: 100vh;">
+    <app-dashboard></app-dashboard>
+<div class = "all">
+    <app-barra-superior></app-barra-superior>
+    <div class = "contenido">
+        <div class="ventas">
+            <div class="grafico1">
+                <div class="elegir">
+                    <h3>Ventas por Año</h3>
+                    <select #anio>
+                        <option value="">Seleccione un Año</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023" selected>2023</option>
+                        <option value="2024">2024</option>
+                    </select>
+                    <button (click)="crearGrafico1(anio.value)">Mostrar</button>
+                </div>
+                <canvas id="myChart1"></canvas>
+            </div>    
+        </div>
+        <div class="productos">
+            <div class="grafico2">
+                <div class="elegir">
+                    <h4>Top de Productos Vendidos</h4>
+                    <label for="top">Elije el top:</label>
+                    <input id="top" type="text" #top>
+                    <button (click)="crearGrafico2(top.value)">Mostrar</button>
+                </div>
+                <canvas id="myChart2"></canvas>
+            </div>    
+        </div>
+        
+        <div class="ventasmes">
+            <div class="grafico3">
+                <div class="elegir">
+                    <h3>Ventas Por Mes - Año</h3>
+                    <select #an>
+                        <option value="">Seleccione un Año</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024" selected>2024</option>
+                    </select>
+                    <select #mes>
+                        <option value="">Seleccione un Mes</option>
+                        <option value="1">Enero</option>
+                        <option value="2">Febrero</option>
+                        <option value="3">Marzo</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Mayo</option>
+                        <option value="6">Junio</option>
+                        <option value="7" selected>Julio</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                    </select>
+                    <button (click)="crearGrafico3(an.value, mes.value)">Mostrar</button>
+                </div>
+                <canvas id="myChart3"></canvas>
+            </div>    
+        </div>
+    </div>    
+</div>

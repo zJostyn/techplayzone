@@ -1,0 +1,46 @@
+<div class="contenido">
+
+    <div class="dashboard">
+     
+      <h1 class = "logo poppins-bold-italic">TECHPLAYZONE</h1>
+      
+      <a routerLink="/admin/dashboard" id = "dashboard"class="dashboard-item poppins-medium" [ngStyle]="{'background-color': esDashboard ? '#3963AD' : 'none', 'color': esDashboard ? '#fff' : '#8FABD2'}">
+        Dashboard
+      </a>
+
+      <div class = "administrar">
+        <p class = "subtitulo poppins-medium">Administrar</p> 
+        <div class = "administrar-contenido">
+          <a [ngStyle]="{'background-color': esProductos ? '#3963AD' : 'none', 'color': esProductos ? '#fff' : '#8FABD2'}" routerLink="/admin/productos" id = "productos" class="dashboard-item poppins-medium">
+            Productos
+          </a>
+  
+          <a routerLink="/admin/categorias" id = "categorias" class="dashboard-item poppins-medium" [ngStyle]="{'background-color': esCategorias ? '#3963AD' : 'none', 'color': esCategorias ? '#fff' : '#8FABD2'}">
+            Categorias
+          </a>
+  
+          <a [ngStyle]="{'background-color': esClientes ? '#3963AD' : 'none', 'color': esClientes ? '#fff' : '#8FABD2'}" routerLink="/admin/clientes" id = "clientes" class="dashboard-item poppins-medium">
+            Clientes
+          </a>
+  
+          <a [ngStyle]="{'background-color': esCiudades ? '#3963AD' : 'none', 'color': esCiudades ? '#fff' : '#8FABD2'}" routerLink="/admin/ciudades" id = "ciudades" class="dashboard-item poppins-medium">
+            Ciudades
+          </a>  
+
+          <a [ngStyle]="{'background-color': esEstadisticas ? '#3963AD' : 'none', 'color': esCiudades ? '#fff' : '#8FABD2'}" routerLink="/admin/estadisticas" id = "estadisticas" class="dashboard-item poppins-medium">
+            Estadisticas
+          </a>  
+        </div>
+      </div>
+        
+
+        <hr color = "#415E8A">
+        <div class = "visualizar">
+          <p class = "subtitulo poppins-medium">Visualizar</p>
+           <a [ngStyle]="{'background-color': esPedidos ? '#3963AD' : 'none', 'color': esPedidos ? '#fff' : '#8FABD2'}" class="dashboard-item poppins-medium" routerLink="/admin/pedidos">Pedidos</a>
+        </div>
+        
+
+    </div>
+  </div>
+  

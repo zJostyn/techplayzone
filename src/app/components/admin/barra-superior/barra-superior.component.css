@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* The dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* The button used to open the dropdown */
+.dropbtn {
+  background-color: #fff;
+  color: #949597;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Show dropdown content when dropdown is active */
+.show {
+  display: block;
+}
+  
+  .barra{
+    background-color: var(--color-blanco);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+  }
+
+  .barra-opciones{
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+.logo-usuario{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+  }
+
+  #flip{
+    width: 15px;
+  }
+
+  #salir{
+    font-size: 14px;
+  }
+
+  p{
+    margin: 0;
+  }

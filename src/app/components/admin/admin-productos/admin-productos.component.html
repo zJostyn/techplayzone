@@ -1,0 +1,79 @@
+<div style = "display: flex; height: 100vh;">
+    <app-dashboard></app-dashboard>
+    <div class = "all">
+        <app-barra-superior></app-barra-superior>
+        <div class = "contenido">
+            <div class = "tabla-boton">
+                <button class="btn-insert" (click)="mostrarModalInsertar()"><img src="../../../../assets/btn insertar.png" alt=""></button>
+                <div class="table-container">
+                    <table>
+                        <thead class = "poppins-medium">
+                            <tr>
+                                <th>...</th>
+                                <th>Nombre</th>
+                                <th>Categoría</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Imagen</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class = "poppins-regular" *ngFor="let producto of productos;">
+                                <td>{{producto.id}}</td>
+                                <td>{{producto.nombre}}</td>
+                                <td>{{producto.categoria}}</td>
+                                <td>{{producto.descripcion}}</td>
+                                <td>${{producto.precio}}</td>
+                                <td>{{producto.stock}}</td>
+                                <td><img style = "width: 80px;" src="{{producto.imagen}}" alt=""></td>
+                                <td>
+                                    <button style = "margin: 0 auto;" class="btn-edit" (click)="mostrarModalEditar(producto)"><img src="../../../../assets/btn editar.png" alt=""></button>
+                                    <button class="btn-delete" (click)="eliminarProducto(producto.id)"><img src="../../../../assets/btn eliminar.png" alt=""></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+
+        <div class="modal" *ngIf="modalVisible">
+              <form (submit)="guardarProducto()">
+                <h3 class = "poppins-semibold" style = "text-align: center;margin-bottom: 5px;">{{funcion}}</h3>
+                
+                <div class = "campos">
+                    <div class = "campos-1">
+                    <label class = "poppins-medium" for="catNombre">Nombre:</label>
+                <input class = "poppins-regular" type="text" id="catNombre" name="catNombre" [(ngModel)]="nuevoProducto.prod_nombre" required>
+                <label class = "poppins-medium" id = "catCategoria" for="catCategoria">Categoria:</label>
+                <div class = "lista-categorias">
+                    <input type="text" style = "margin: 0;" value="{{mostrarCategoria}}" readonly>
+                    <select id = "catCategoria" (change)="onCategorySelected($event)">
+                        <option [value]="-1"></option>
+                        <option *ngFor="let categoria of categorias" [value]="categoria.id_categoria">{{ categoria.cat_nombre }}</option>
+                    </select>
+                </div>
+                <label class = "poppins-medium"  for="catDescripcion">Descripción:</label>
+                <textarea class = "poppins-regular" id="catDescripcion" name="catDescripcion" rows="4" [(ngModel)]="nuevoProducto.prod_descripcion" required></textarea>
+                    </div>
+                    <div class = "campos-2">
+                        <label class = "poppins-medium" for="catPrecio">Precio:</label>
+                        <input class = "poppins-regular" type="text" id="catPrecio" name="catPrecio" [(ngModel)]="nuevoProducto.prod_precio" required>
+        
+                        <label class = "poppins-medium" for="catStock">Stock:</label>
+                        <input class = "poppins-regular" type="text" id="catStock" name="catStock" [(ngModel)]="nuevoProducto.prod_stock" required>
+        
+                        <label class = "poppins-medium" for="catUrlImagen">URL Imagen:</label>
+                        <input class = "poppins-regular" type="text" id="catUrlImagen" name="catUrlImagen" [(ngModel)]="nuevoProducto.prod_imagen" required>
+                    </div> 
+                </div>
+
+                <button class = "poppins-medium" type="submit">Guardar</button>
+                <button class = "poppins-medium cancelar" type="button" (click)="cerrarModal()">Cancelar</button>
+                <button type="button" class="btn-exit" (click)="cerrarModal()"><i class="fa-solid fa-xmark"></i></button>
+              </form>
+          </div>
+    </div>
+</div>
+</div>
