@@ -93,7 +93,7 @@ export class AdminEstadisticasComponent implements OnInit {
 
   ActualizarGrafico1 = async (año: any) => {
     try {
-      const response = await fetch('http://localhost:3000/api/totalmes/' + año);
+      const response = await fetch('https://apitechplayzone.onrender.com/api/totalmes/' + año);
       const data = await response.json();
 
       if (this.myChart1) {
@@ -146,7 +146,7 @@ export class AdminEstadisticasComponent implements OnInit {
 
   ActualizarGrafico2 = async (topnum: any) => {
     try {
-      const response = await fetch('http://localhost:3000/api/topproductos/' + topnum);
+      const response = await fetch('https://apitechplayzone.onrender.com/api/topproductos/' + topnum);
       const data = await response.json();
 
       if (this.myChart2) {
@@ -201,7 +201,7 @@ export class AdminEstadisticasComponent implements OnInit {
     try {
       const anio = an;
       const mes = me;
-      const response = await fetch('http://localhost:3000/api/totaldelmes', {
+      const response = await fetch('https://apitechplayzone.onrender.com/api/totaldelmes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json' // Especifica que el cuerpo es JSON

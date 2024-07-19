@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuariosService {
-  API_URL = 'http://localhost:3000/api/';
+  API_URL = 'https://apitechplayzone.onrender.com/api/';
 
   constructor(private http:HttpClient) { }
 

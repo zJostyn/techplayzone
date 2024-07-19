@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class GenerosService {
 
-  API_URL = 'http://localhost:3000/api/';
+  API_URL = 'https://apitechplayzone.onrender.com/api/';
 
   constructor(private http:HttpClient) { }
 
