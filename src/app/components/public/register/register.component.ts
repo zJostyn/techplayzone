@@ -38,7 +38,7 @@ export class RegisterComponent {
         }, 1500);
       }, 
       (error) => {
-        this.alert_service.showAlert("No se pudo crear el usuario!", "error");
+        this.alert_service.showAlert(error.message.message, "error");
       } 
     )
     }
