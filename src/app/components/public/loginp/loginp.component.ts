@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../services/auth.service';
 import { AlertService } from '../../../services/alert.service';
 import { UsuariosService } from '../../../services/usuarios.service';
 import { AccesoTokenService } from '../../../services/acceso-token.service';
@@ -13,7 +12,7 @@ import { FormControl, FormGroup, Validators, ReactiveFormsModule} from '@angular
   styleUrl: './loginp.component.css'
 })
 export class LoginpComponent {
-  constructor(private title:Title, private router:Router, private authService:AuthService, private alert_service:AlertService, private servicioUsuario:UsuariosService, private accesoToken:AccesoTokenService){}
+  constructor(private title:Title, private router:Router, private alert_service:AlertService, private servicioUsuario:UsuariosService, private accesoToken:AccesoTokenService){}
 
   mostrarContrasena = false;
 
