@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuariosService {
-  API_URL = 'https://apitechplayzonevercel.vercel.app//api/';
+  API_URL = 'https://apitechplayzonevercel.vercel.app/api/';
 
   constructor(private http:HttpClient) { }
 
