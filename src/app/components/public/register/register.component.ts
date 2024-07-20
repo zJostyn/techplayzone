@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../services/auth.service';
 import { AlertService } from '../../../services/alert.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsuariosService } from '../../../services/usuarios.service';

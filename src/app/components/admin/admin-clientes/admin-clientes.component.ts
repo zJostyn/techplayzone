@@ -6,7 +6,6 @@ import { ModalService } from '../../../services/modal.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { provideProtractorTestingSupport } from '@angular/platform-browser';
 import { setThrowInvalidWriteToSignalError } from '@angular/core/primitives/signals';
-import { AuthService } from '../../../services/auth.service';
 import { AccesoTokenService } from '../../../services/acceso-token.service';
 
 @Component({

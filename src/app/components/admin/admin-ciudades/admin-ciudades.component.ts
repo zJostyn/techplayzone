@@ -3,7 +3,6 @@ import { CiudadesService, Ciudad } from '../../../services/ciudades.service';
 import { ModalService } from '../../../services/modal.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { AuthService } from '../../../services/auth.service';
 import { AccesoTokenService } from '../../../services/acceso-token.service';
 
 @Component({

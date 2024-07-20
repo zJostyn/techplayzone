@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { DashboardService } from '../../../services/dashboard.service';
-import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
 import { AccesoTokenService } from '../../../services/acceso-token.service';
 

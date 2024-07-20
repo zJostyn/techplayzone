@@ -3,7 +3,6 @@ import { ProductosService, Producto } from '../../../services/productos.service'
 import { ModalService } from '../../../services/modal.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriasService } from '../../../services/categorias.service';
-import { AuthService } from '../../../services/auth.service';
 import { AccesoTokenService } from '../../../services/acceso-token.service';
 import { Usuario } from '../../../services/usuarios.service';
 
