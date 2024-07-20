@@ -183,7 +183,7 @@ guardarCliente() {
           setTimeout(()=>{
             this.router.navigate(["public/factura/" + idPedido]);
             this.enviarFactura();
-          }, 3000);
+          }, 500);
         },
         error => {
           console.error('Error al obtener el ID del último pedido:', error);
