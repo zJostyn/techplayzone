@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class EmailService {
 
-  private API_URL = 'https://apitechplayzonevercel.vercel.app/send-email';
+  private API_URL = 'https://apitechplayzonevercel.vercel.app/api/send-email';
 
   constructor(private http: HttpClient) {}
 
