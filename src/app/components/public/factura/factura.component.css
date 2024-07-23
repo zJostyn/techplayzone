@@ -185,3 +185,11 @@ footer {
         left: 250px;
     }
   }
+
+  @media (min-width: 1920px) {
+    footer {
+        position: absolute;
+        top: 500px;
+        left: 680px;
+    }
+  }

@@ -391,3 +391,53 @@
     .lista-categorias select{
       width: 50px;
     }
+
+    @media (min-width: 1920px) {
+      .ventas {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        left: -750px;
+        top: 30px;
+      }
+    
+    .productos {
+        position: absolute;
+        width: 300px; 
+        height: 400px;
+        left: 680px;
+        top: 110px;
+      }
+    
+    .ventasmes {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        left: 1290px;
+        top: 110px;
+     }
+
+     .grafico1 {
+      position: relative;
+      height: 400px;
+      width: 500px;
+      left: 50px;
+      top: 20px;
+    }
+  
+    .grafico2 {
+      position: relative;
+      height: 400px;
+      width: 550px;
+      left: 50px;
+      top: 20px;
+    }
+  
+    .grafico3 {
+      position: relative;
+      height: 400px;
+      width: 500px;
+      left: 50px;
+      top: 15px;
+    }
+}

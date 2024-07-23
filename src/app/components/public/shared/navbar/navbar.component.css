@@ -360,3 +360,18 @@ border-top-left-radius: 25px; /* Redondear la esquina superior izquierda */
 border-bottom-left-radius: 25px; /* Redondear la esquina inferior izquierda */
 width: 300px;
 }
+
+@media (min-width: 1920px) {
+  #panel {
+    position: absolute !important;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 10px;
+    width: 200px;
+    height: 160px;
+    top: 60px;
+    left: 1470px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
