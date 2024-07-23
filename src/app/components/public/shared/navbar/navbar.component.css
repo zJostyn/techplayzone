@@ -375,3 +375,18 @@ width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 }
+
+@media (min-width: 1367px) and (max-width: 1919px) {
+  #panel {
+    position: absolute !important;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 10px;
+    width: 200px;
+    height: 160px;
+    top: 45px;
+    left: 1200px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}

@@ -207,3 +207,10 @@
         max-width: 900px;
       }
     }
+
+    @media (min-width: 1367px) and (max-width: 1919px) {
+      .table-container {
+        max-height: 480px;
+        max-width: 800px;
+      }
+    }

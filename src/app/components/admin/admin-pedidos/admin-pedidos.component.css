@@ -217,4 +217,13 @@
         max-height: 750px;
         overflow-y: scroll;
     }
+  }
+    @media (min-width: 1367px) and (max-width: 1919px) {
+      .table-container {
+        background-color: var(--color-blanco);
+        border-radius: 10px;
+        padding: 0px 20px;
+        max-height: 570px;
+        overflow-y: scroll;
+      }
     }

@@ -432,7 +432,7 @@
       left: 50px;
       top: 20px;
     }
-  
+
     .grafico3 {
       position: relative;
       height: 400px;
@@ -440,4 +440,30 @@
       left: 50px;
       top: 15px;
     }
+  }
+
+    @media (min-width: 1367px) and (max-width: 1919px) {
+      .ventas {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        left: -550px;
+        top: 30px;
+      }
+    
+    .productos {
+        position: absolute;
+        width: 300px; 
+        height: 400px;
+        left: 570px;
+        top: 110px;
+      }
+    
+    .ventasmes {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        left: 1010px;
+        top: 110px;
+     }
 }
